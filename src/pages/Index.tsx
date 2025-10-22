@@ -8,6 +8,10 @@ import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
 import { format } from "date-fns";
 import { ru } from "date-fns/locale";
+import BookingForm from "@/components/BookingForm";
+import FAQ from "@/components/FAQ";
+import PriceCalculator from "@/components/PriceCalculator";
+import Newsletter from "@/components/Newsletter";
 
 interface Tour {
   id: number;
@@ -315,6 +319,14 @@ const Index = () => {
           </Card>
         </div>
       </section>
+
+      <PriceCalculator />
+
+      <BookingForm />
+
+      <FAQ />
+
+      <Newsletter />
 
       <footer className="bg-foreground text-white py-12 px-4">
         <div className="container mx-auto">

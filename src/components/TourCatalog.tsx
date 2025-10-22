@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Icon from "@/components/ui/icon";
+import BookingModal from "./BookingModal";
 
 interface TourCatalogProps {
   filters: {
@@ -78,11 +80,19 @@ const countries = ["Все страны", "Швейцария", "Мальдив�
 const months = ["Все месяцы", "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
 
 const TourCatalog = ({ filters, setFilters }: TourCatalogProps) => {
+  const [bookingModalOpen, setBookingModalOpen] = useState(false);
+  const [selectedTour, setSelectedTour] = useState("");
+
   const filteredTours = tours.filter((tour) => {
     const matchesCountry = !filters.country || filters.country === "Все страны" || tour.country === filters.country;
     const matchesMonth = !filters.month || filters.month === "Все месяцы" || tour.months.includes(filters.month);
     return matchesCountry && matchesMonth;
   });
+
+  const handleBooking = (tourTitle: string) => {
+    setSelectedTour(tourTitle);
+    setBookingModalOpen(true);
+  };
 
   return (
     <section id="catalog" className="py-20 px-4 bg-background">
@@ -163,9 +173,9 @@ const TourCatalog = ({ filters, setFilters }: TourCatalogProps) => {
                 <div className="text-2xl font-bold text-primary">{tour.price}</div>
               </CardContent>
               <CardFooter>
-                <Button className="w-full" size="lg">
-                  Подробнее
-                  <Icon name="ArrowRight" size={18} className="ml-2" />
+                <Button className="w-full" size="lg" onClick={() => handleBooking(tour.title)}>
+                  Забронировать
+                  <Icon name="Calendar" size={18} className="ml-2" />
                 </Button>
               </CardFooter>
             </Card>
@@ -181,6 +191,11 @@ const TourCatalog = ({ filters, setFilters }: TourCatalogProps) => {
           </div>
         )}
       </div>
+      <BookingModal 
+        open={bookingModalOpen} 
+        onOpenChange={setBookingModalOpen}
+        tourTitle={selectedTour}
+      />
     </section>
   );
 };
