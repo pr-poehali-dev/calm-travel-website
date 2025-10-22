@@ -395,6 +395,7 @@ const Index = () => {
       </footer>
 
       <LiveChat />
+      <ChatWidget />
     </div>
   );
 };
