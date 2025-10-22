@@ -12,6 +12,9 @@ import BookingForm from "@/components/BookingForm";
 import FAQ from "@/components/FAQ";
 import PriceCalculator from "@/components/PriceCalculator";
 import Newsletter from "@/components/Newsletter";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import LiveChat from "@/components/LiveChat";
+import ChatWidget from "@/components/ChatWidget";
 
 interface Tour {
   id: number;
@@ -320,6 +323,8 @@ const Index = () => {
         </div>
       </section>
 
+      <WhyChooseUs />
+
       <PriceCalculator />
 
       <BookingForm />
@@ -388,6 +393,8 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      <LiveChat />
     </div>
   );
 };
