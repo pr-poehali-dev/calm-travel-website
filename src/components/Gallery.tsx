@@ -1,17 +1,17 @@
 const images = [
   {
     id: 1,
-    url: "https://cdn.poehali.dev/projects/9e34e272-60cb-4d86-8731-1e28d7a7c49f/files/8ffa7223-6633-434f-a981-9e0dd630544e.jpg",
+    url: "https://cdn.poehali.dev/projects/9e34e272-60cb-4d86-8731-1e28d7a7c49f/files/7490531f-de0e-4ad9-9d0e-0fbb796bd3d2.jpg",
     title: "Горные вершины"
   },
   {
     id: 2,
-    url: "https://cdn.poehali.dev/projects/9e34e272-60cb-4d86-8731-1e28d7a7c49f/files/5f0d8609-235d-4b7e-8daf-6aaa5df8ef84.jpg",
+    url: "https://cdn.poehali.dev/projects/9e34e272-60cb-4d86-8731-1e28d7a7c49f/files/5e60877b-1b0f-4785-9559-49475057f5d5.jpg",
     title: "Тропический рай"
   },
   {
     id: 3,
-    url: "https://cdn.poehali.dev/projects/9e34e272-60cb-4d86-8731-1e28d7a7c49f/files/cbe21b9f-6bb5-4a6a-b934-c94d63fd2e77.jpg",
+    url: "https://cdn.poehali.dev/projects/9e34e272-60cb-4d86-8731-1e28d7a7c49f/files/5cb19f56-2445-4a24-ba59-25a65c5a2159.jpg",
     title: "Историческая архитектура"
   },
   {
